@@ -6,8 +6,9 @@ class ThemesDemoApp {
         this.selectedDevice = null;
 
         this.options = {
-            url: 'http://themes.krzysztof-furtak.pl/themes/malpha2/malpha2/',
-            container: '#kk-demo-app',
+            url: window.KW_DEMO_CONFIG.themeUrl || '',
+            container: window.KW_DEMO_CONFIG.container || '#kk-demo-app',
+            qrcode: window.KW_DEMO_CONFIG.qrcode || '',
             devices: {
                 mobile_small: {
                     name: 'Mobile Small',
@@ -77,11 +78,27 @@ class ThemesDemoApp {
 
         frame.style.width = this.options.devices[this.selectedDevice].size[0] + 'px';
         frame.style.height = this.options.devices[this.selectedDevice].size[1] + 'px';
+
+      this.selectMenu();
     }
 
     refreshView() {
         console.log('--> this.options.container: ', this.options.container, document.querySelector(this.options.container));
         document.querySelector(this.options.container).innerHTML = this.insertTemplate();
+
+        this.selectMenu();
+    }
+
+    selectMenu() {
+        const menuLinks = document.querySelectorAll(this.options.container + ' .kk-menu a');
+
+        map(menuLinks, (link) => {
+            link.classList.remove('active');
+        });
+
+        const selected = document.querySelector(this.options.container + ' .kk-menu a[data-device="'+ this.selectedDevice +'"]');
+
+        selected.classList.add('active');
     }
 
     insertTemplate() {
@@ -93,7 +110,7 @@ class ThemesDemoApp {
         }
 
         return (`
-            <div class="kk=menu">
+            <div class="kk-menu">
                 ${this.insertMenu()}
             </div>
             <div class="kk-iframe">
@@ -107,12 +124,27 @@ class ThemesDemoApp {
                 return (`<li><a href="#" data-device="${key}" class="${device.menuClass}">${device.name}</a></li>`);
             }).join('');
 
-        return (`<div class="kk-menu"><ul>${links}</ul></div>`);
+        return (`
+            <div class="kk-menu">
+                <span>Select device: </span>
+                <ul>${links}</ul>
+            </div>
+        `);
+    }
+
+    insertQRcode() {
+        return(`
+            <div class="kk-qrcode">
+                <div>Check on your phone!</div>
+                <img src="${this.options.qrcode}">
+            </div>
+        `);
     }
 
     insertIframe() {
         return (`
-            <div class="kk-bg">
+            <div class="kk-device">
+                ${this.options.qrcode ? this.insertQRcode() : ''}
                 <iframe 
                     src="${this.options.url}"
                     frameborder="0"

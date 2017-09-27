@@ -9,6 +9,27 @@
     text-align: center;
 }
 
+.kk-qrcode {
+    position: absolute;
+    top: 0;
+    left: -180px;
+    text-align: right;
+    color: #333333;
+}
+
+.kk-qrcode > div {
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.kk-qrcode img {
+    display: inline-block;
+    background: #333333;
+    padding: 5px;
+    border-radius: 3px;
+    width: 120px;
+}
+
 /**
 * =============================
 *   MENU
@@ -17,6 +38,11 @@
 
 .kk-menu {
     text-align: center;
+}
+
+.kk-menu > span,
+.kk-menu > ul {
+    display: inline-block;
 }
 
 .kk-menu ul {
@@ -41,6 +67,11 @@
     line-height: 16px;
     margin: 0 2px;
     border-radius: 4px;
+}
+
+.kk-menu ul li a.active {
+    background: #666666;
+    color: #f0f0f0;
 }
 
 .kk-menu ul li a.kk-mobile::after,
@@ -72,7 +103,8 @@
 * =============================
 */
 
-.kk-bg {
+.kk-device {
+    position: relative;
     display: inline-block;
     margin: 0 auto;
     background: #000000;

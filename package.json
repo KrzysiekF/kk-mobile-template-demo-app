@@ -6,7 +6,7 @@
   "scripts": {
     "build": "nwb build-web-app",
     "clean": "nwb clean-app",
-    "start": "nwb serve-web-app --reload",
+    "start": "nwb serve-web-app --reload --port=9000",
     "test": "nwb test",
     "test:coverage": "nwb test --coverage",
     "test:watch": "nwb test --server"
