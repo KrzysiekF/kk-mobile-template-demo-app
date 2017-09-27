@@ -1,2 +1,0 @@
-webpackJsonp([1],{0:function(e,o,n){n("vcSV"),e.exports=n("lVK7")},lVK7:function(e,o){document.querySelector("#app").innerHTML="<h2>Welcome to kw-demo</h2>"}},[0]);
-//# sourceMappingURL=app.4127d976.js.map
