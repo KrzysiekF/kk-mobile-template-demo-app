@@ -1,6 +1,5 @@
 /.idea
 /coverage
-/dist
 /template
 /node_modules
 npm-debug.log*
