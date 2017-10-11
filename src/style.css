@@ -12,7 +12,7 @@
 .kk-qrcode {
     position: absolute;
     top: 0;
-    left: -180px;
+    left: -160px;
     text-align: right;
     color: #333333;
 }
@@ -27,7 +27,7 @@
     background: #333333;
     padding: 5px;
     border-radius: 3px;
-    width: 120px;
+    width: 120px !important;
 }
 
 /**
@@ -95,6 +95,10 @@
 .kk-menu ul li a.kk-mobile-landscape::after,
 .kk-menu ul li a.kk-tablet-landscape::after {
     transform: rotate(-90deg);
+}
+
+.kk-menu > select {
+    width: auto;
 }
 
 /**
