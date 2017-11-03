@@ -14,31 +14,49 @@ class ThemesDemoApp {
           name: 'Mobile Small',
           size: [ 320, 480 ],
           menuClass: 'kk-mobile',
+          gaCategory: 'preview-change',
+          gaAction: 'click',
+          gaLabel: 'Mobile Small',
         },
         mobile_small_landscape: {
           name: 'Mobile Small Landscape',
           size: [ 480, 320 ],
           menuClass: 'kk-mobile-landscape',
+          gaCategory: 'preview-change',
+          gaAction: 'click',
+          gaLabel: 'Mobile Small Landscape',
         },
         mobile: {
           name: 'Mobile',
           size: [ 375, 667 ],
           menuClass: 'kk-mobile',
+          gaCategory: 'preview-change',
+          gaAction: 'click',
+          gaLabel: 'Mobile',
         },
         mobile_landscape: {
           name: 'Mobile Landscape',
           size: [ 667, 375 ],
           menuClass: 'kk-mobile-landscape',
+          gaCategory: 'preview-change',
+          gaAction: 'click',
+          gaLabel: 'Mobile Landscape',
         },
         tablet: {
           name: 'Tablet',
           size: [ 768, 1024 ],
           menuClass: 'kk-tablet',
+          gaCategory: 'preview-change',
+          gaAction: 'click',
+          gaLabel: 'Tablet',
         },
         tablet_landscape: {
           name: 'Tablet Landscape',
           size: [ 1024, 768 ],
           menuClass: 'kk-tablet-landscape',
+          gaCategory: 'preview-change',
+          gaAction: 'click',
+          gaLabel: 'Tablet Landscape',
         },
       },
       themes: window.KW_DEMO_CONFIG.themes || [],
@@ -159,7 +177,18 @@ class ThemesDemoApp {
 
   insertMenu() {
     const links = map(this.options.devices, (device, key) => {
-      return (`<li><a href="#" data-device="${key}" class="${device.menuClass}">${device.name}</a></li>`);
+      return (`
+        <li>
+          <a
+            href="#"
+            data-device="${key}"
+            class="${device.menuClass}"
+            data-vars-ga-category="${device.gaCategory}"
+            data-vars-ga-action="${device.gaAction}"
+            data-vars-ga-label="${device.gaLabel}"
+          >${device.name}</a>
+        </li>
+      `);
     }).join('');
 
     return (`
