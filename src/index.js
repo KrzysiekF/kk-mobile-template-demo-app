@@ -9,7 +9,7 @@ class ThemesDemoApp {
       url: window.KW_DEMO_CONFIG.themeUrl || '',
       container: window.KW_DEMO_CONFIG.container || '#kk-demo-app',
       qrcode: window.KW_DEMO_CONFIG.qrcode || '',
-      devices: {
+      devices: window.KW_DEMO_CONFIG.devices || {
         mobile_small: {
           name: 'Mobile Small',
           size: [ 320, 480 ],

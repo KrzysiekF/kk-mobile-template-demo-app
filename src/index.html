@@ -16,6 +16,32 @@
         themeUrl: '/template/',
         container: '#kk-demo-app',
         qrcode: 'http://themes.krzysztof-furtak.pl/themes/malpha2/demo/assets/img/qrcode_malpha2.png',
+        devices: {
+          mobile_small: {
+            name: 'Mobile Small',
+            size: [ 320, 480 ],
+            menuClass: 'kk-mobile',
+            gaCategory: 'preview-change',
+            gaAction: 'click',
+            gaLabel: 'Mobile Small',
+          },
+          mobile: {
+            name: 'Mobile',
+            size: [ 375, 667 ],
+            menuClass: 'kk-mobile',
+            gaCategory: 'preview-change',
+            gaAction: 'click',
+            gaLabel: 'Mobile',
+          },
+          tablet: {
+            name: 'Tablet',
+            size: [ 768, 1024 ],
+            menuClass: 'kk-tablet',
+            gaCategory: 'preview-change',
+            gaAction: 'click',
+            gaLabel: 'Tablet',
+          },
+        },
         themes: [
           { name: 'Default', slug: '' },
           { name: 'Grass', slug: 'grass' },
