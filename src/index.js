@@ -93,6 +93,14 @@ class ThemesDemoApp {
             theme.href = `assets/themes/${event.target.value}/style.css`;
           });
     }
+
+    document.getElementById('kk-demo-load-template').
+      addEventListener('click', (event) => {
+        const frame = document.getElementById('kk-demo-frame');
+        frame.src = this.options.url;
+
+        document.getElementById('kk-demo-load-template').remove();
+      });
   }
 
   onMenuClick(button) {
@@ -212,10 +220,11 @@ class ThemesDemoApp {
   insertIframe() {
     return (`
             <div class="kk-device">
+                <button id="kk-demo-load-template" class="kk-demo-button">Load the template</button>
                 ${this.options.qrcode ? this.insertQRcode() : ''}
                 <iframe
                     id="kk-demo-frame"
-                    src="${this.options.url}"
+                    src=""
                     frameborder="0"
                     style="width: ${this.options.devices[ this.selectedDevice ].size[ 0 ]}px; height: ${this.options.devices[ this.selectedDevice ].size[ 1 ]}px;"
                 ></iframe>

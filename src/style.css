@@ -1,8 +1,17 @@
 #kk-demo-app iframe {
     width: 320px;
     height: 480px;
+    background-color: #333333;
 
     transition: width 200ms, height 200ms;
+}
+
+#kk-demo-load-template {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    text-transform: uppercase;
 }
 
 .kk-iframe {
@@ -28,6 +37,26 @@
     padding: 5px;
     border-radius: 3px;
     width: 120px !important;
+}
+
+.kk-demo-button {
+    display: inline-block;
+    line-height: 1;
+    padding: 7px 10px;
+    color: #FFFFFF;
+    background: #4facfe;
+    border: 2px solid #4facfe;
+    text-decoration: none;
+    font-size: 14px;
+    margin: 0 2px;
+    border-radius: 3px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.kk-demo-button:hover {
+    background: #4273b8;
+    border: 2px solid #4273b8;
 }
 
 /**
