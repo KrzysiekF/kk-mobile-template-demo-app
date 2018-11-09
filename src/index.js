@@ -324,6 +324,6 @@ class ThemesDemoApp {
 
         return (`${labelText} <select id="kk-demo-theme-change">${options}</select>`);
     }
-}
+};
 
 new ThemesDemoApp();
