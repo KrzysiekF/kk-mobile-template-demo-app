@@ -199,6 +199,7 @@ $button-icon-size: 16px !default;
         left: 0;
         bottom: 0;
         right: 0;
+        z-index: 100000;
 
         .kk-demo__header {
             background-color: $color-header-bg;
