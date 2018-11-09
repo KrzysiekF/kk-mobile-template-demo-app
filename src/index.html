@@ -1,55 +1,73 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>kw-demo</title>
     <meta name="description" content="">
     <style>
-      body {
-        font-family: Arial, Helvetica, sans-serif;
-      }
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
     </style>
     <script>
-      window.KW_DEMO_CONFIG = {
-        themeUrl: '/template/',
-        container: '#kk-demo-app',
-        qrcode: 'http://themes.krzysztof-furtak.pl/themes/malpha2/demo/assets/img/qrcode_malpha2.png',
-        devices: {
-          mobile_small: {
-            name: 'Mobile Small',
-            size: [ 320, 480 ],
-            menuClass: 'kk-mobile',
-            gaCategory: 'preview-change',
-            gaAction: 'click',
-            gaLabel: 'Mobile Small',
-          },
-          mobile: {
-            name: 'Mobile',
-            size: [ 375, 667 ],
-            menuClass: 'kk-mobile',
-            gaCategory: 'preview-change',
-            gaAction: 'click',
-            gaLabel: 'Mobile',
-          },
-          tablet: {
-            name: 'Tablet',
-            size: [ 768, 1024 ],
-            menuClass: 'kk-tablet',
-            gaCategory: 'preview-change',
-            gaAction: 'click',
-            gaLabel: 'Tablet',
-          },
-        },
-        themes: [
-          { name: 'Default', slug: '' },
-          { name: 'Grass', slug: 'grass' },
-        ]
-      };
+        window.KW_DEMO_CONFIG = {
+            defaultSelectedDevice: 'desktop',
+            fullscreen: false,
+            backURL: 'https://kw-themes.com',
+            logoURL: 'https://kw-themes.com',
+            logoImg: 'https://kw-themes.com/wp-content/uploads/2017/09/kw-logo.png',
+            ctaURL: 'https://kw-themes.com',
+            ctaText: 'Buy for only $14',
+            themeUrl: '/template/',
+            container: '#kk-demo-app',
+            qrcode: null,
+            devices: {
+                desktop: {
+                    name: 'Desktop',
+                    size: [0, 0],
+                    menuClass: 'kk-mobile',
+                    gaCategory: 'preview-change',
+                    gaAction: 'click',
+                    gaLabel: 'Desktop',
+                },
+                mobile_small: {
+                    name: 'Mobile Small',
+                    size: [320, 480],
+                    menuClass: 'kk-mobile',
+                    gaCategory: 'preview-change',
+                    gaAction: 'click',
+                    gaLabel: 'Mobile Small',
+                },
+                mobile: {
+                    name: 'Mobile',
+                    size: [375, 667],
+                    menuClass: 'kk-mobile',
+                    gaCategory: 'preview-change',
+                    gaAction: 'click',
+                    gaLabel: 'Mobile',
+                },
+                tablet: {
+                    name: 'Tablet',
+                    size: [768, 1024],
+                    menuClass: 'kk-tablet',
+                    gaCategory: 'preview-change',
+                    gaAction: 'click',
+                    gaLabel: 'Tablet',
+                },
+            },
+            // themes: [
+            //     { name: 'Default', slug: '' },
+            //     { name: 'Grass', slug: 'grass' },
+            // ]
+        };
     </script>
-  </head>
-  <body>
+</head>
+
+<body>
     <div id="kk-demo-app"></div>
-  </body>
+</body>
+
 </html>

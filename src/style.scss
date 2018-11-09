@@ -1,0 +1,235 @@
+/**
+* =============================
+*   VARIABLES
+* =============================
+*/
+
+$color-primary: #3498db !default;
+$color-primary-darken: darken($color-primary, 10%) !default;
+
+$color-dark: #34495e !default;
+$color-dark-darken: darken($color-dark, 10%) !default;
+
+$color-gray: #95a5a6 !default;
+$color-gray-darken: darken(#7f8c8d, 10%) !default;
+
+$color-fullscreen-bg: #f0f0f0 !default;
+$color-iframe-bg: #333333 !default;
+$color-qrcode-font: #333333 !default;
+$color-qrcode-bg: #333333 !default;
+$color-header-bg: #2c3e50 !default;
+$color-header-font: #f0f0f0 !default;
+
+$button-icon-size: 16px !default;
+
+/**
+* =============================
+*   CONTAINER / BASE
+* =============================
+*/
+
+.kk-demo__button {
+    display: block;
+    position: relative;
+    padding: 7px 10px;
+    color: #f0f0f0;
+    background: $color-gray;
+    text-decoration: none;
+    font-size: 14px;
+    line-height: 1;
+    margin: 0 2px;
+    border-radius: 3px;
+    box-shadow: 0 3px 0 $color-gray-darken;
+
+    &.active {
+        background: $color-gray-darken;
+        color: #f0f0f0;
+        box-shadow: none;
+        top: 3px;
+    }
+
+    > svg {
+        width: $button-icon-size;
+        height: $button-icon-size;
+        vertical-align: middle;
+        fill: #f0f0f0;
+        margin-right: 3px;
+    }
+
+    > span {
+        vertical-align: middle;
+    }
+}
+
+.kk-demo__header {
+    text-align: center;
+
+    > select {
+        width: auto;
+    }
+
+    > span,
+    > ul {
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    ul {
+        margin: 15px 0;
+        padding: 0;
+        list-style: none;
+
+        li {
+            display: inline-block;
+        }
+    }
+}
+
+.kk-demo__button-box {
+    position: relative;
+    align-self: stretch;
+
+    a {
+        position: absolute;
+        background-color: $color-dark;
+        color: #f0f0f0;
+        text-decoration: none;
+        font-weight: 600;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        text-align: center;
+        transition: background-color 250ms;
+
+        svg {
+            fill: #f0f0f0;
+        }
+
+        > span {
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        &:hover {
+            background-color: $color-dark-darken;
+        }
+
+        &.primary {
+            background-color: $color-primary;
+
+            &:hover {
+                background-color: $color-primary-darken;
+            }
+        }
+    }
+}
+
+.kk-demo__header-bar {
+    display: grid;
+    align-items: center;
+    grid-column-gap: 20px;
+    grid-template-columns: 50px 1fr 2fr 1fr;
+    grid-template-areas: "back logo deviceMenu buyButton";
+
+    .kk-demo__header-bar--back {
+        grid-area: back;
+    }
+
+    .kk-demo__header-bar--logo {
+        grid-area: logo;
+
+        img {
+            height: 25px;
+        }
+    }
+
+    .kk-demo__header-bar--menu {
+        grid-area: deviceMenu;
+        padding: 5px 0 10px;
+
+        > span {
+            font-size: 12px;
+            text-transform: uppercase;
+        }
+
+        > ul {
+            margin: 5px 0 0;
+        }
+    }
+
+    .kk-demo__header-bar--button {
+        grid-area: buyButton;
+    }
+}
+
+.kk-demo__iframe-container {
+    text-align: center;
+}
+
+.kk-demo__qrcode {
+    position: absolute;
+    top: 0;
+    left: -160px;
+    text-align: right;
+    color: $color-qrcode-font;
+
+    > div {
+        margin-bottom: 5px;
+        font-weight: 600;
+    }
+
+    img {
+        display: inline-block;
+        background: $color-qrcode-bg;
+        padding: 5px;
+        border-radius: 3px;
+        width: 120px !important;
+    }
+}
+
+.kk-demo__container {
+    &.fullscreen {
+        position: fixed;
+        background-color: $color-fullscreen-bg;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+
+        .kk-demo__header {
+            background-color: $color-header-bg;
+            color: $color-header-font;
+            text-align: left;
+        }
+    }
+
+    iframe {
+        width: 320px;
+        height: 480px;
+        background-color: $color-iframe-bg;
+        transition: width 200ms, height 200ms;
+    }
+}
+
+/**
+* =============================
+*   DEVICE
+* =============================
+*/
+
+.kk-demo__device {
+    position: relative;
+    display: inline-block;
+    margin: 0 auto;
+}
+
+.kk-demo__device--phone {
+    background: #222222;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 30px;
+}
